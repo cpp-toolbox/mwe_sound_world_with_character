@@ -1,0 +1,6 @@
+[submodule "openal-soft"]
+	path = openal-soft
+	url = git@github.com:kcat/openal-soft.git
+[submodule "libsndfile"]
+	path = libsndfile
+	url = git@github.com:libsndfile/libsndfile.git

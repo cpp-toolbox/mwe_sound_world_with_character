@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/g72x_test.dir/src/G72x/g72x_test.c.o -o g72x_test  libsndfile.a -lm /usr/lib/libvorbisenc.so /usr/lib/libvorbis.so /usr/lib/libFLAC.so /usr/lib/libogg.so /usr/lib/libopus.so /usr/lib/libmpg123.so /usr/lib/libmp3lame.so 

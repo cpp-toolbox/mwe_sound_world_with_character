@@ -1,0 +1,2 @@
+/usr/bin/ar qc libalcommon.a CMakeFiles/alcommon.dir/common/alcomplex.cpp.o CMakeFiles/alcommon.dir/common/alsem.cpp.o CMakeFiles/alcommon.dir/common/alstring.cpp.o CMakeFiles/alcommon.dir/common/althrd_setname.cpp.o CMakeFiles/alcommon.dir/common/dynload.cpp.o CMakeFiles/alcommon.dir/common/pffft.cpp.o CMakeFiles/alcommon.dir/common/polyphase_resampler.cpp.o CMakeFiles/alcommon.dir/common/ringbuffer.cpp.o CMakeFiles/alcommon.dir/common/strutils.cpp.o
+/usr/bin/ranlib libalcommon.a

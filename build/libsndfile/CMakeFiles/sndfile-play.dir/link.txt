@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG "CMakeFiles/sndfile-play.dir/programs/sndfile-play.c.o" "CMakeFiles/sndfile-play.dir/programs/common.c.o" -o sndfile-play  -lm libsndfile.a /usr/lib/libasound.so -lm /usr/lib/libvorbisenc.so /usr/lib/libvorbis.so /usr/lib/libFLAC.so /usr/lib/libogg.so /usr/lib/libopus.so /usr/lib/libmpg123.so /usr/lib/libmp3lame.so 

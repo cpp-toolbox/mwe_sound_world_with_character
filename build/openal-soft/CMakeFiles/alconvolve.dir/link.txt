@@ -1,0 +1,1 @@
+/usr/bin/c++ -O2 -g -D_DEBUG CMakeFiles/alconvolve.dir/examples/alconvolve.c.o -o alconvolve  -pthread libalcommon.a /usr/lib/libsndfile.so libal-excommon.a libopenal.a -pthread -ldl -latomic -lm -lrt 

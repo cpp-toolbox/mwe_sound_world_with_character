@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/external_libs_test.dir/tests/external_libs_test.c.o -o external_libs_test  libsndfile.a libtest_utils.a -lm libsndfile.a -lm /usr/lib/libvorbisenc.so /usr/lib/libvorbis.so /usr/lib/libFLAC.so /usr/lib/libogg.so /usr/lib/libopus.so /usr/lib/libmpg123.so /usr/lib/libmp3lame.so 

@@ -1,0 +1,1 @@
+/usr/bin/c++ -O2 -g -D_DEBUG "CMakeFiles/sofa-info.dir/utils/sofa-info.cpp.o" -o sofa-info  -pthread libsofa-support.a -pthread libalcommon.a /usr/lib/libmysofa.so /usr/lib/libz.so -lm 

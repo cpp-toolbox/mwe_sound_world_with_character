@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG "CMakeFiles/sndfile-metadata-set.dir/programs/sndfile-metadata-set.c.o" "CMakeFiles/sndfile-metadata-set.dir/programs/common.c.o" -o sndfile-metadata-set  libsndfile.a -lm /usr/lib/libvorbisenc.so /usr/lib/libvorbis.so /usr/lib/libFLAC.so /usr/lib/libogg.so /usr/lib/libopus.so /usr/lib/libmpg123.so /usr/lib/libmp3lame.so 

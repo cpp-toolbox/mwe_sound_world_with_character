@@ -1,0 +1,1 @@
+/usr/bin/c++ -O2 -g -D_DEBUG CMakeFiles/allatency.dir/examples/allatency.c.o -o allatency  -pthread /usr/lib/libsndfile.so libal-excommon.a libopenal.a -pthread -ldl -latomic -lm -lrt 
