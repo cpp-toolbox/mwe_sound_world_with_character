@@ -1,1 +1,0 @@
-/usr/bin/cc -O2 -g -DNDEBUG "CMakeFiles/sndfile-convert.dir/programs/sndfile-convert.c.o" "CMakeFiles/sndfile-convert.dir/programs/common.c.o" -o sndfile-convert  libsndfile.a -lm /usr/lib/libvorbisenc.so /usr/lib/libvorbis.so /usr/lib/libFLAC.so /usr/lib/libogg.so /usr/lib/libopus.so /usr/lib/libmpg123.so /usr/lib/libmp3lame.so 

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libsofa-support.a "CMakeFiles/sofa-support.dir/utils/sofa-support.cpp.o"
-/usr/bin/ranlib libsofa-support.a

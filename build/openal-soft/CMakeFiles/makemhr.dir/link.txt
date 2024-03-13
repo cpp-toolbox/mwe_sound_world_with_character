@@ -1,1 +1,0 @@
-/usr/bin/c++ -O2 -g -D_DEBUG CMakeFiles/makemhr.dir/utils/makemhr/loaddef.cpp.o CMakeFiles/makemhr.dir/utils/makemhr/loadsofa.cpp.o CMakeFiles/makemhr.dir/utils/makemhr/makemhr.cpp.o -o makemhr  -pthread libsofa-support.a -pthread libalcommon.a /usr/lib/libmysofa.so /usr/lib/libz.so -lm 

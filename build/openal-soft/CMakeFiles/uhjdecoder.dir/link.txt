@@ -1,1 +1,0 @@
-/usr/bin/c++ -O2 -g -D_DEBUG CMakeFiles/uhjdecoder.dir/utils/uhjdecoder.cpp.o -o uhjdecoder  libalcommon.a -pthread /usr/lib/libsndfile.so 

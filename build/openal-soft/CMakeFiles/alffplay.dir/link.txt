@@ -1,1 +1,0 @@
-/usr/bin/c++ -O2 -g -D_DEBUG CMakeFiles/alffplay.dir/examples/alffplay.cpp.o -o alffplay  -pthread /usr/lib/libSDL2-2.0.so.0.3000.0 /usr/lib/libavformat.so /usr/lib/libavcodec.so /usr/lib/libavutil.so /usr/lib/libswscale.so /usr/lib/libswresample.so /usr/lib/libz.so libal-excommon.a libopenal.a -pthread -ldl -latomic -lm -lrt 
