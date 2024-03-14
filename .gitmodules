@@ -4,3 +4,33 @@
 [submodule "libsndfile"]
 	path = external_libraries/libsndfile
 	url = git@github.com:libsndfile/libsndfile.git
+[submodule "graphics/model_loading"]
+	path = graphics/model_loading
+	url = git@github.com:opengl-toolbox/model_loading.git
+[submodule "external_libraries/glfw"]
+	path = external_libraries/glfw
+	url = git@github.com:glfw/glfw.git
+[submodule "external_libraries/glad_opengl_3.3_core"]
+	path = external_libraries/glad_opengl_3.3_core
+	url = git@github.com:opengl-toolbox/glad_opengl_3.3_core.git
+[submodule "external_libraries/glm"]
+	path = external_libraries/glm
+	url = git@github.com:g-truc/glm.git
+[submodule "graphics/window"]
+	path = graphics/window
+	url = git@github.com:opengl-toolbox/window.git
+[submodule "graphics/shader_pipeline"]
+	path = graphics/shader_pipeline
+	url = git@github.com:opengl-toolbox/shader_pipeline.git
+[submodule "interaction/camera"]
+	path = interaction/camera
+	url = git@github.com:opengl-toolbox/camera.git
+[submodule "interaction/mouse"]
+	path = interaction/mouse
+	url = git@github.com:opengl-toolbox/mouse.git
+[submodule "external_libraries/stb"]
+	path = external_libraries/stb
+	url = git@github.com:nothings/stb.git
+[submodule "external_libraries/assimp"]
+	path = external_libraries/assimp
+	url = git@github.com:assimp/assimp.git
