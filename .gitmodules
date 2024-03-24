@@ -34,3 +34,6 @@
 [submodule "external_libraries/assimp"]
 	path = external_libraries/assimp
 	url = git@github.com:assimp/assimp.git
+[submodule "sound_system"]
+	path = sound_system
+	url = git@github.com:opengl-toolbox/sound_system.git

@@ -5,15 +5,16 @@ project(openal_mwe)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(openal_mwe main.cpp
-        sound/load_sound_file.cpp
         interaction/camera/camera.cpp
         interaction/mouse/mouse.cpp
+
         graphics/model_loading/model_loading.cpp
         graphics/shader_pipeline/shader_pipeline.cpp
         graphics/window/window.cpp
         graphics/graphics.cpp
-        sound/sound_system.cpp
-        sound/sound_system.hpp
+
+        sound_system/sound_system.cpp
+        sound_system/load_sound_file.cpp
 )
 
 set(LIBTYPE STATIC)

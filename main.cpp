@@ -16,7 +16,7 @@
 #include "graphics/model_loading/model_loading.hpp"
 #include "graphics/window/window.hpp"
 #include "graphics/graphics.hpp"
-#include "sound/sound_system.hpp"
+#include "sound_system/sound_system.hpp"
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -94,7 +94,6 @@ std::optional<InitializationData> initialize() {
 
     return initialization_data;
 }
-
 
 int main() {
 
