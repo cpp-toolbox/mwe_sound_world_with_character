@@ -418,7 +418,7 @@ ALuint load_audio_file_in_dynamic_memory_into_buffer(void *membuf, SNDFILE *soun
  * LoadBuffer loads the named audio file into an OpenAL buffer object, and
  * returns the new buffer ID.
  */
-ALuint loud_sound_and_generate_openal_buffer(const char *filename) {
+ALuint load_sound_and_generate_openal_buffer(const char *filename) {
     SNDFILE *sound_file;
     SF_INFO sound_file_info;
     ALenum format;

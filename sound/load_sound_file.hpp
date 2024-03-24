@@ -3,6 +3,6 @@
 
 #include "AL/al.h"
 
-ALuint loud_sound_and_generate_openal_buffer(const char *filename);
+ALuint load_sound_and_generate_openal_buffer(const char *filename);
 
 #endif //OPENAL_MWE_LOAD_SOUND_FILE_HPP

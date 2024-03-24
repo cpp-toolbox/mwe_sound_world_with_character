@@ -12,6 +12,8 @@ add_executable(openal_mwe main.cpp
         graphics/shader_pipeline/shader_pipeline.cpp
         graphics/window/window.cpp
         graphics/graphics.cpp
+        sound/sound_system.cpp
+        sound/sound_system.hpp
 )
 
 set(LIBTYPE STATIC)

@@ -1,15 +1,3 @@
-#include "AL/al.h"
-#include "AL/alc.h"
-#include "AL/alext.h"
-#include "sndfile.h"
-
-#include <cassert>
-#include <cstddef>
-#include <cstdio>
-#include <unistd.h>
-
-#include "sound/load_sound_file.hpp"
-
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
 
@@ -28,6 +16,7 @@
 #include "graphics/model_loading/model_loading.hpp"
 #include "graphics/window/window.hpp"
 #include "graphics/graphics.hpp"
+#include "sound/sound_system.hpp"
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -104,111 +93,16 @@ std::optional<InitializationData> initialize() {
     InitializationData initialization_data = { shader_pipeline, model, window};
 
     return initialization_data;
-
 }
-
-int initialize_openal();
-void deinitialize_openal();
-void al_nssleep(unsigned long nsec);
-
-int initialize_openal() {
-  const ALCchar *name;
-  ALCdevice *device;
-  ALCcontext *ctx;
-
-  /* Open and initialize a device */
-
-  device = alcOpenDevice(NULL); // open the preferred device
-
-  if (!device) {
-    fprintf(stderr, "Could not open a device!\n");
-    return 1;
-  }
-
-  ctx = alcCreateContext(device, NULL);
-  if (ctx == NULL || alcMakeContextCurrent(ctx) == ALC_FALSE) {
-    if (ctx != NULL)
-      alcDestroyContext(ctx);
-    alcCloseDevice(device);
-    fprintf(stderr, "Could not set a context!\n");
-    return 1;
-  }
-
-  name = NULL;
-  if (alcIsExtensionPresent(device, "ALC_ENUMERATE_ALL_EXT"))
-    name = alcGetString(device, ALC_ALL_DEVICES_SPECIFIER);
-  if (!name || alcGetError(device) != AL_NO_ERROR)
-    name = alcGetString(device, ALC_DEVICE_SPECIFIER);
-  printf("Opened \"%s\"\n", name);
-
-  return 0;
-}
-
-/* CloseAL closes the device belonging to the current context, and destroys the
- * context. */
-void deinitialize_openal() {
-
-  ALCdevice *device;
-  ALCcontext *ctx;
-
-  ctx = alcGetCurrentContext();
-  if (ctx == NULL)
-    return;
-
-  device = alcGetContextsDevice(ctx);
-
-  alcMakeContextCurrent(NULL);
-  alcDestroyContext(ctx);
-  alcCloseDevice(device);
-}
-
-void al_nssleep(unsigned long nsec) { usleep(nsec / 1000000); }
-
-
 
 
 int main() {
 
-//    SOUND START
+    SoundSystem sound_system;
 
-    initialize_openal();
-
-    ALuint source, buffer;
-    ALfloat offset;
-    ALenum state;
-
-    buffer = loud_sound_and_generate_openal_buffer("../fishin_mono.wav");
-    if (!buffer) {
-        deinitialize_openal();
-        return 1;
-    }
-
-    /* Create the source to play the sound with. */
-    source = 0;
-    alGenSources(1, &source);
-    alSourcei(source, AL_BUFFER, (ALint)buffer);
-    assert(alGetError() == AL_NO_ERROR && "Failed to setup sound source");
-
-    ALfloat zero[] = {0.0f, 0.0f, 0.0f};
-
-    alSourcefv(source,AL_POSITION,zero);
-    assert(alGetError() == AL_NO_ERROR && "Failed to setup source position");
-
-    /* Play the sound until it finishes. */
-    alSourcePlay(source);
-//    do {
-////        al_nssleep(10000000);
-//        alGetSourcei(source, AL_SOURCE_STATE, &state);
-//
-//        /* Get the source offset. */
-//        alGetSourcef(source, AL_SEC_OFFSET, &offset);
-//        printf("\rOffset: %f  ", offset);
-//        fflush(stdout);
-//    } while (alGetError() == AL_NO_ERROR && state == AL_PLAYING);
-//    printf("\n");
-
-
-//    SOUND END
+    sound_system.load_sound_into_system_for_playback("music", "../fishin_mono.wav");
+    sound_system.create_sound_source("origin");
+    sound_system.play_sound("origin", "music");
 
     std::optional<InitializationData> id = initialize();
 
@@ -227,22 +121,12 @@ int main() {
         process_input(window);
         render(shader_pipeline, model, character.position, camera, SCR_WIDTH, SCR_HEIGHT);
 
-        ALfloat listener_pos[] = {character.position.x, character.position.y, character.position.z};
-
-        alListenerfv(AL_POSITION,listener_pos);
-        assert(alGetError() == AL_NO_ERROR && "Failed to setup sound source");
+        sound_system.set_listener_position(character.position.x, character.position.y, character.position.z);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-
-
-    /* All done. Delete resources, and close down OpenAL. */
-    alDeleteSources(1, &source);
-    alDeleteBuffers(1, &buffer);
-
-    deinitialize_openal();
 
     glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
     return 0;
