@@ -1,0 +1,16 @@
+[requires]
+glfw/3.4
+glad/0.1.36
+# joltphysics/3.0.1 - doesn't built on my system
+assimp/5.4.1
+stb/cci.20230920
+glm/cci.20230113
+libsndfile/1.2.2
+openal-soft/1.23.1
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[layout]
+cmake_layout
