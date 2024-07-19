@@ -25,7 +25,10 @@ find_package(glad)
 find_package(assimp)
 find_package(stb)
 find_package(glm)
-find_package(SndFile)
+# find_package(SndFile)
 find_package(OpenAL)
+
+add_subdirectory(external_libraries/libsndfile)
+include_directories(external_libraries/libsndfile/include)
 
 target_link_libraries(${PROJECT_NAME} glfw glad::glad assimp::assimp stb::stb glm::glm SndFile::sndfile OpenAL::OpenAL)

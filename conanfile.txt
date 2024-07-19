@@ -5,7 +5,7 @@ glad/0.1.36
 assimp/5.4.1
 stb/cci.20230920
 glm/cci.20230113
-libsndfile/1.2.2
+# libsndfile/1.2.2 -- doesn't build on windows errors with: error: Unicode File Open for Win32 not available
 openal-soft/1.23.1
 
 [generators]

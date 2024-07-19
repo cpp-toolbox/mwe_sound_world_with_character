@@ -34,3 +34,6 @@
 [submodule "src/utils/stopwatch"]
 	path = src/utils/stopwatch
 	url = git@github.com:cpp-toolbox/stopwatch.git
+[submodule "external_libraries/libsndfile"]
+	path = external_libraries/libsndfile
+	url = git@github.com:libsndfile/libsndfile.git
