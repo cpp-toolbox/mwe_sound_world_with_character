@@ -3,6 +3,11 @@ project(openal_mwe)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# Set the C++ standard to C++20
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 add_executable(openal_mwe src/main.cpp
         src/interaction/camera/camera.cpp
         src/interaction/mouse/mouse.cpp
